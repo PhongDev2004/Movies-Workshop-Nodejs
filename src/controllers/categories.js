@@ -3,7 +3,6 @@ import Category from "../models/CategoryModel.js";
 import ApiError from "../utils/ApiError.js";
 
 class CategoriesController {
-  // GET /categories
   async getAllCategories(req, res, next) {
     try {
       const categories = await Category.find();
@@ -15,7 +14,6 @@ class CategoriesController {
       next(error);
     }
   }
-  // GET /categories/:id
   async getCategoryDetail(req, res, next) {
     try {
       const category = await Category.findById(req.params.id);
@@ -29,7 +27,6 @@ class CategoriesController {
       next(error);
     }
   }
-  // POST /categories
   async createCategory(req, res, next) {
     try {
       const newCategory = await Category.create(req.body);
@@ -41,7 +38,6 @@ class CategoriesController {
       next(error);
     }
   }
-  // PUT /categories/:id
   async updateCategory(req, res, next) {
     try {
       const category = await Category.findByIdAndUpdate(
@@ -58,7 +54,6 @@ class CategoriesController {
       next(error);
     }
   }
-  // DELETE /categories/:id
   async deleteCategory(req, res, next) {
     try {
       const category = await Category.findByIdAndDelete(req.params.id);
