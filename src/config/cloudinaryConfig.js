@@ -13,8 +13,6 @@ cloudinary.config({
   api_secret: CLOUDINARY_SECRET,
 });
 
-// multer : store
-
 const storage = new CloudinaryStorage({
   cloudinary,
   allowedFormats: ["jpg", "jpeg", "png"],
